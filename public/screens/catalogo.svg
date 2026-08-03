@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 852" width="393" height="852" role="img" aria-label="Catálogo de iPhones da World Cell">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B8862B"/><stop offset=".5" stop-color="#F2D272"/><stop offset="1" stop-color="#B8862B"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0D1240"/><stop offset="1" stop-color="#05071C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="393" height="852" fill="#F5F5F7"/>
+  <rect width="393" height="238" fill="url(#sky)"/>
+
+  <!-- status bar -->
+  <text x="30" y="52" font-family="Inter,system-ui,sans-serif" font-size="17" font-weight="700" fill="#fff">9:41</text>
+  <g fill="#fff">
+    <rect x="304" y="41" width="3.5" height="7" rx="1.5"/><rect x="310" y="38" width="3.5" height="10" rx="1.5"/>
+    <rect x="316" y="35" width="3.5" height="13" rx="1.5"/><rect x="322" y="32" width="3.5" height="16" rx="1.5"/>
+    <rect x="337" y="34" width="26" height="14" rx="4" opacity=".45"/><rect x="339" y="36" width="19" height="10" rx="2.5"/>
+  </g>
+
+  <!-- brand -->
+  <text x="30" y="126" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="800" letter-spacing="3.4" fill="url(#gold)">WORLD CELL</text>
+  <text x="30" y="168" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="800" fill="#fff" letter-spacing="-0.9">iPhones em</text>
+  <text x="30" y="204" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="800" fill="#fff" letter-spacing="-0.9">estoque hoje</text>
+
+  <!-- search -->
+  <rect x="24" y="212" width="345" height="52" rx="26" fill="#fff"/>
+  <circle cx="55" cy="238" r="8" fill="none" stroke="#6E6E73" stroke-width="2.4"/>
+  <line x1="61" y1="244" x2="67" y2="250" stroke="#6E6E73" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="82" y="245" font-family="Inter,system-ui,sans-serif" font-size="16" fill="#8E8E93">Buscar modelo…</text>
+
+  <!-- filter chips -->
+  <g font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600">
+    <rect x="24" y="288" width="76" height="32" rx="16" fill="#0D1240"/><text x="62" y="309" fill="#fff" text-anchor="middle">Todos</text>
+    <rect x="108" y="288" width="86" height="32" rx="16" fill="#fff" stroke="#E8E8ED" stroke-width="1.5"/><text x="151" y="309" fill="#0D1240" text-anchor="middle">Pro Max</text>
+    <rect x="202" y="288" width="72" height="32" rx="16" fill="#fff" stroke="#E8E8ED" stroke-width="1.5"/><text x="238" y="309" fill="#0D1240" text-anchor="middle">128 GB</text>
+    <rect x="282" y="288" width="87" height="32" rx="16" fill="#fff" stroke="#E8E8ED" stroke-width="1.5"/><text x="325" y="309" fill="#0D1240" text-anchor="middle">Lacrado</text>
+  </g>
+
+  <!-- cards -->
+  <g font-family="Inter,system-ui,sans-serif">
+    <!-- card 1 -->
+    <rect x="24" y="342" width="345" height="118" rx="22" fill="#fff"/>
+    <rect x="42" y="360" width="62" height="82" rx="12" fill="#EDEDF2"/>
+    <rect x="52" y="370" width="42" height="62" rx="8" fill="#0D1240" opacity=".14"/>
+    <circle cx="66" cy="384" r="5.5" fill="#0D1240" opacity=".3"/><circle cx="82" cy="384" r="5.5" fill="#0D1240" opacity=".3"/><circle cx="66" cy="400" r="5.5" fill="#0D1240" opacity=".3"/>
+    <text x="122" y="382" font-size="19" font-weight="700" fill="#0D1240" letter-spacing="-0.4">iPhone 15 Pro Max</text>
+    <text x="122" y="406" font-size="14" fill="#6E6E73">256 GB · Titânio Natural</text>
+    <rect x="122" y="418" width="96" height="24" rx="12" fill="#E9F8EF"/>
+    <text x="170" y="435" font-size="12" font-weight="700" fill="#15803D" text-anchor="middle">Bateria 96%</text>
+    <rect x="226" y="418" width="72" height="24" rx="12" fill="#FBF3DC"/>
+    <text x="262" y="435" font-size="12" font-weight="700" fill="#8F6A12" text-anchor="middle">Garantia</text>
+
+    <!-- card 2 -->
+    <rect x="24" y="474" width="345" height="118" rx="22" fill="#fff"/>
+    <rect x="42" y="492" width="62" height="82" rx="12" fill="#EDEDF2"/>
+    <rect x="52" y="502" width="42" height="62" rx="8" fill="#0D1240" opacity=".14"/>
+    <circle cx="66" cy="516" r="5.5" fill="#0D1240" opacity=".3"/><circle cx="82" cy="516" r="5.5" fill="#0D1240" opacity=".3"/><circle cx="66" cy="532" r="5.5" fill="#0D1240" opacity=".3"/>
+    <text x="122" y="514" font-size="19" font-weight="700" fill="#0D1240" letter-spacing="-0.4">iPhone 14 Pro</text>
+    <text x="122" y="538" font-size="14" fill="#6E6E73">128 GB · Roxo-profundo</text>
+    <rect x="122" y="550" width="96" height="24" rx="12" fill="#E9F8EF"/>
+    <text x="170" y="567" font-size="12" font-weight="700" fill="#15803D" text-anchor="middle">Bateria 91%</text>
+    <rect x="226" y="550" width="98" height="24" rx="12" fill="#FBF3DC"/>
+    <text x="275" y="567" font-size="12" font-weight="700" fill="#8F6A12" text-anchor="middle">Testado</text>
+
+    <!-- card 3 -->
+    <rect x="24" y="606" width="345" height="118" rx="22" fill="#fff"/>
+    <rect x="42" y="624" width="62" height="82" rx="12" fill="#EDEDF2"/>
+    <rect x="52" y="634" width="42" height="62" rx="8" fill="#0D1240" opacity=".14"/>
+    <circle cx="66" cy="648" r="5.5" fill="#0D1240" opacity=".3"/><circle cx="82" cy="648" r="5.5" fill="#0D1240" opacity=".3"/>
+    <text x="122" y="646" font-size="19" font-weight="700" fill="#0D1240" letter-spacing="-0.4">iPhone 13</text>
+    <text x="122" y="670" font-size="14" fill="#6E6E73">128 GB · Meia-noite</text>
+    <rect x="122" y="682" width="96" height="24" rx="12" fill="#E9F8EF"/>
+    <text x="170" y="699" font-size="12" font-weight="700" fill="#15803D" text-anchor="middle">Bateria 89%</text>
+    <rect x="226" y="682" width="86" height="24" rx="12" fill="#EDEDF7"/>
+    <text x="269" y="699" font-size="12" font-weight="700" fill="#0D1240" text-anchor="middle">Seminovo</text>
+  </g>
+
+  <!-- bottom cta -->
+  <rect x="24" y="746" width="345" height="58" rx="29" fill="url(#gold)"/>
+  <text x="196" y="782" font-family="Inter,system-ui,sans-serif" font-size="17" font-weight="800" fill="#05071C" text-anchor="middle">Falar com a loja</text>
+</svg>
