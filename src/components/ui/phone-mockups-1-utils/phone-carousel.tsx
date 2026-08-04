@@ -3,7 +3,6 @@
 import * as React from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { useMediaQuery } from "@/components/motion/use-media-query";
@@ -258,24 +257,22 @@ export function PhoneCarousel({
   const showGhosts = useMediaQuery("(min-width: 768px)");
 
   const [index, setIndex] = React.useState(0);
-  const [paused, setPaused] = React.useState(false);
   const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
 
   const count = images.length;
-  const isPaused = paused || hoveredIndex !== null;
+  const isPaused = hoveredIndex !== null;
 
-  const go = React.useCallback(
-    (delta: number) => setIndex((i) => (i + delta + count) % count),
-    [count],
-  );
-
-  // Auto-rotation. Skipped entirely when the user asked for reduced motion —
-  // an unstoppable slideshow is exactly what that preference is about.
+  // Auto-rotation — the only way to pause it is to hover or focus a phone.
+  // Skipped entirely when the user asked for reduced motion — an
+  // unstoppable slideshow is exactly what that preference is about.
   React.useEffect(() => {
     if (isPaused || reduceMotion || interval <= 0 || count < 2) return;
-    const id = window.setInterval(() => go(1), interval);
+    const id = window.setInterval(
+      () => setIndex((i) => (i + 1) % count),
+      interval,
+    );
     return () => window.clearInterval(id);
-  }, [isPaused, reduceMotion, interval, count, go]);
+  }, [isPaused, reduceMotion, interval, count]);
 
   const current = images[index];
 
@@ -316,53 +313,6 @@ export function PhoneCarousel({
           Tela {index + 1} de {count}: {current.alt}
         </p>
       </div>
-
-      {/* Controls — 44px targets, always visible, never hover-only. */}
-      <div className="absolute bottom-6 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2">
-        <ControlButton label="Tela anterior" onClick={() => go(-1)}>
-          <ChevronLeft />
-        </ControlButton>
-
-        <ControlButton
-          label={paused ? "Retomar rotação automática" : "Pausar rotação automática"}
-          onClick={() => setPaused((p) => !p)}
-          size="lg"
-        >
-          {paused ? <Play className="translate-x-px" /> : <Pause />}
-        </ControlButton>
-
-        <ControlButton label="Próxima tela" onClick={() => go(1)}>
-          <ChevronRight />
-        </ControlButton>
-      </div>
     </div>
-  );
-}
-
-function ControlButton({
-  label,
-  onClick,
-  children,
-  size = "md",
-}: {
-  label: string;
-  onClick: () => void;
-  children: React.ReactNode;
-  size?: "md" | "lg";
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={label}
-      className={cn(
-        "grid place-items-center rounded-full border border-white/25 bg-navy-950/55 text-white backdrop-blur-md",
-        "transition-all duration-[130ms] ease-[cubic-bezier(0.2,0,0,1)]",
-        "hover:border-gold-300/70 hover:bg-navy-900/75 hover:text-gold-200 active:scale-95",
-        size === "lg" ? "size-12 [&_svg]:size-5" : "size-11 [&_svg]:size-4",
-      )}
-    >
-      {children}
-    </button>
   );
 }
