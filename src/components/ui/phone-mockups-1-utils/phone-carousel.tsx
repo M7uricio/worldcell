@@ -140,20 +140,32 @@ function PhoneSlot({
   const resetTilt = () => setTilt({ rx: 0, ry: 0 });
   const hoverBoost = isHovered && !reduceMotion;
 
-  const Comp = isActive ? motion.div : motion.button;
-
   return (
-    // Outer element owns hit-testing AND the slide position (x/y/scale/
-    // rotateY/opacity all driven by `offset` alone). It never reacts to
-    // hover, so the hoverable box can't shift out from under a stationary
-    // cursor mid-hover — that shift is exactly what caused the hover state
-    // to flicker on/off when the boost lived here instead.
-    <Comp
-      type={isActive ? undefined : "button"}
+    // Always the same host element (a div), whether this phone is active or
+    // a ghost. It used to switch between motion.div (active) and
+    // motion.button (ghost) — but changing element TYPE on the phone that
+    // becomes active/inactive forces React to unmount and remount it, which
+    // severs Motion's animation continuity: that specific handoff snapped
+    // into place instead of transitioning, while phones moving between two
+    // ghost offsets (same element type throughout) animated fine. Button
+    // semantics are applied via role/tabIndex/onKeyDown instead, so the tag
+    // itself never changes.
+    <motion.div
+      role={isActive ? undefined : "button"}
       aria-label={isActive ? undefined : `Ir para: ${item.alt}`}
       aria-hidden={!isActive && Math.abs(offset) >= 2 ? true : undefined}
-      tabIndex={!isActive && Math.abs(offset) >= 2 ? -1 : undefined}
+      tabIndex={isActive ? undefined : Math.abs(offset) >= 2 ? -1 : 0}
       onClick={isActive ? undefined : onSelect}
+      onKeyDown={
+        isActive
+          ? undefined
+          : (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                onSelect?.();
+              }
+            }
+      }
       onPointerEnter={() => onHoverChange(true)}
       onPointerLeave={() => {
         onHoverChange(false);
@@ -227,7 +239,7 @@ function PhoneSlot({
           />
         </PhoneFrame>
       </motion.div>
-    </Comp>
+    </motion.div>
   );
 }
 
