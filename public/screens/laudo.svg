@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 393 852" width="393" height="852" role="img" aria-label="Laudo técnico do aparelho aprovado na revisão">
+  <defs>
+    <linearGradient id="gold2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B8862B"/><stop offset=".5" stop-color="#F2D272"/><stop offset="1" stop-color="#B8862B"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="393" height="852" fill="#fff"/>
+
+  <!-- status bar -->
+  <text x="30" y="52" font-family="Inter,system-ui,sans-serif" font-size="17" font-weight="700" fill="#0D1240">9:41</text>
+  <g fill="#0D1240">
+    <rect x="304" y="41" width="3.5" height="7" rx="1.5"/><rect x="310" y="38" width="3.5" height="10" rx="1.5"/>
+    <rect x="316" y="35" width="3.5" height="13" rx="1.5"/><rect x="322" y="32" width="3.5" height="16" rx="1.5"/>
+    <rect x="337" y="34" width="26" height="14" rx="4" opacity=".35"/><rect x="339" y="36" width="19" height="10" rx="2.5"/>
+  </g>
+
+  <text x="30" y="122" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="800" letter-spacing="2.6" fill="#8F6A12">LAUDO TÉCNICO</text>
+  <text x="30" y="162" font-family="Inter,system-ui,sans-serif" font-size="31" font-weight="800" fill="#0D1240" letter-spacing="-0.9">Revisão</text>
+  <text x="30" y="196" font-family="Inter,system-ui,sans-serif" font-size="31" font-weight="800" fill="#0D1240" letter-spacing="-0.9">concluída</text>
+
+  <!-- score ring -->
+  <g transform="translate(196,300)">
+    <circle r="76" fill="none" stroke="#EDEDF2" stroke-width="16"/>
+    <circle r="76" fill="none" stroke="url(#gold2)" stroke-width="16" stroke-linecap="round"
+            stroke-dasharray="453 477" transform="rotate(-90)"/>
+    <text y="-2" font-family="Inter,system-ui,sans-serif" font-size="44" font-weight="800" fill="#0D1240" text-anchor="middle">OK</text>
+    <text y="26" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="#6E6E73" text-anchor="middle">aprovado</text>
+  </g>
+
+  <!-- checklist -->
+  <g font-family="Inter,system-ui,sans-serif" font-size="17" font-weight="600" fill="#0D1240">
+    <g transform="translate(0,430)">
+      <rect x="24" y="0" width="345" height="60" rx="18" fill="#F5F5F7"/>
+      <circle cx="56" cy="30" r="15" fill="#15803D"/>
+      <path d="M49 30l5 5 9-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="86" y="36">Saúde da bateria</text>
+      <text x="345" y="36" text-anchor="end" font-size="15" font-weight="700" fill="#15803D">96%</text>
+    </g>
+    <g transform="translate(0,502)">
+      <rect x="24" y="0" width="345" height="60" rx="18" fill="#F5F5F7"/>
+      <circle cx="56" cy="30" r="15" fill="#15803D"/>
+      <path d="M49 30l5 5 9-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="86" y="36">Câmeras e Face ID</text>
+      <text x="345" y="36" text-anchor="end" font-size="15" font-weight="700" fill="#15803D">OK</text>
+    </g>
+    <g transform="translate(0,574)">
+      <rect x="24" y="0" width="345" height="60" rx="18" fill="#F5F5F7"/>
+      <circle cx="56" cy="30" r="15" fill="#15803D"/>
+      <path d="M49 30l5 5 9-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="86" y="36">Tela e touch</text>
+      <text x="345" y="36" text-anchor="end" font-size="15" font-weight="700" fill="#15803D">OK</text>
+    </g>
+    <g transform="translate(0,646)">
+      <rect x="24" y="0" width="345" height="60" rx="18" fill="#F5F5F7"/>
+      <circle cx="56" cy="30" r="15" fill="#15803D"/>
+      <path d="M49 30l5 5 9-10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="86" y="36">Áudio e microfone</text>
+      <text x="345" y="36" text-anchor="end" font-size="15" font-weight="700" fill="#15803D">OK</text>
+    </g>
+  </g>
+
+  <rect x="24" y="742" width="345" height="62" rx="24" fill="#0D1240"/>
+  <text x="196" y="770" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Aparelho aprovado</text>
+  <text x="196" y="791" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#8F97D1" text-anchor="middle">Revisão interna e externa concluída</text>
+</svg>
