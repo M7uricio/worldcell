@@ -1,14 +1,8 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useMediaQuery } from "@/components/motion/use-media-query";
 
 const QUERY = "(prefers-reduced-motion: reduce)";
-
-function subscribe(onChange: () => void) {
-  const mql = window.matchMedia(QUERY);
-  mql.addEventListener("change", onChange);
-  return () => mql.removeEventListener("change", onChange);
-}
 
 /**
  * Reads the exact same media query the CSS overrides use, so the JS and CSS
@@ -16,12 +10,8 @@ function subscribe(onChange: () => void) {
  *
  * Motion's own `useReducedMotion` subscribes to the value-less
  * `(prefers-reduced-motion)` form, which is a different query — this keeps one
- * source of truth. Server snapshot is `false` so markup stays deterministic.
+ * source of truth.
  */
 export function usePrefersReducedMotion() {
-  return useSyncExternalStore(
-    subscribe,
-    () => window.matchMedia(QUERY).matches,
-    () => false,
-  );
+  return useMediaQuery(QUERY);
 }
