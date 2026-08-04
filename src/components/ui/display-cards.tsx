@@ -30,8 +30,8 @@ function DisplayCard({
   return (
     <div
       className={cn(
-        "relative flex h-36 w-[19rem] -skew-y-[8deg] flex-col justify-between rounded-xl border-2 border-white/10 bg-navy-800/70 px-4 py-3 backdrop-blur-sm transition-all duration-700 select-none sm:w-[22rem]",
-        "after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[16rem] after:bg-linear-to-l after:from-navy-950 after:to-transparent after:content-[''] sm:after:w-[20rem]",
+        "relative flex h-36 w-64 -skew-y-[8deg] flex-col justify-between rounded-xl border-2 border-white/10 bg-navy-800/70 px-4 py-3 backdrop-blur-sm transition-all duration-700 select-none sm:w-[22rem]",
+        "after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-52 after:bg-linear-to-l after:from-navy-950 after:to-transparent after:content-[''] sm:after:w-[20rem]",
         "hover:border-gold-300/40 hover:bg-navy-700/80",
         "[&>*]:flex [&>*]:items-center [&>*]:gap-2",
         className,

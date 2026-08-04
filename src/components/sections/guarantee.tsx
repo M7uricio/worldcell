@@ -24,8 +24,10 @@ const stackCards = [
     title: "Aprovação",
     description: "Revisão completa",
     date: "Antes de ir à vitrine",
+    // Horizontal offset is tighter on mobile — the full 40px stagger plus
+    // card width doesn't fit a phone-width column and got clipped.
     className:
-      "[grid-area:stack] translate-x-10 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-white/10 before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-navy-950/60 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
+      "[grid-area:stack] translate-x-3 translate-y-10 hover:-translate-y-1 sm:translate-x-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-white/10 before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-navy-950/60 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
   },
   {
     icon: <Sparkles className="size-4 text-gold-200" aria-hidden />,
@@ -33,7 +35,7 @@ const stackCards = [
     description: "Você aprova, aí fecha",
     date: "Na loja, sem pressa",
     className:
-      "[grid-area:stack] translate-x-20 translate-y-20 hover:translate-y-10",
+      "[grid-area:stack] translate-x-6 translate-y-20 hover:translate-y-10 sm:translate-x-20",
   },
 ];
 
@@ -92,14 +94,14 @@ export function Guarantee() {
               <h2
                 id="garantia-titulo"
                 data-reveal
-                className="mt-4 font-display text-4xl font-extrabold tracking-[-0.03em] text-balance text-white sm:text-5xl"
+                className="mt-5 font-display text-4xl font-extrabold tracking-[-0.03em] text-balance text-white sm:text-5xl"
               >
                 Seminovo confiável não é sorte.
-                <span className="block text-gold-gradient">É processo.</span>
+                <span className="block text-gold-gradient pt-2">É processo.</span>
               </h2>
               <p
                 data-reveal
-                className="mt-6 max-w-xl text-lg leading-relaxed text-white/65"
+                className="mt-7 max-w-xl text-lg leading-relaxed text-white/65"
               >
                 A pergunta que mais recebemos é se celular seminovo é confiável.
                 A resposta é sim — porque nenhum aparelho chega até você sem
@@ -109,12 +111,21 @@ export function Guarantee() {
               </p>
             </div>
 
-            {/* 21st.dev display-cards. The stack's own cards translate right and
-                down, so the wrapper reserves that offset as padding — otherwise
-                the last card runs past the column edge and gets clipped. */}
+            {/* 21st.dev display-cards. Padding has to clear three things, not
+                just the rest-state offset: the -8deg skew on every card adds
+                ~25px of its own bleed top and bottom (skewY shifts the right
+                edge up and the left edge down, growing the box vertically —
+                it never touches the horizontal bounds), and the back card's
+                hover:-translate-y-10 lifts it a further 40px on top of that.
+                pr stays small since `justify-center` is doing the real work
+                horizontally: it centers the stack's *untransformed* width, so
+                a too-generous pr just pushes the whole cluster in from the
+                left without buying the trailing card any more room — the
+                stagger itself has to fit inside the column, which is why it's
+                tighter on mobile above. */}
             <div
               data-reveal
-              className="flex justify-center overflow-hidden pt-4 pr-20 pb-24 sm:pr-24 sm:pb-20"
+              className="flex justify-center overflow-hidden pt-24 pr-6 pb-32 sm:pr-20"
             >
               <DisplayCards cards={stackCards} />
             </div>
