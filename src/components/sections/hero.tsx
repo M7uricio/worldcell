@@ -121,7 +121,7 @@ export function Hero() {
             </span>
             <span className="block overflow-hidden pb-2">
               <span data-hero-line className="block text-gold-gradient">
-                pagar de novo.
+                pagar caro.
               </span>
             </span>
           </h1>
