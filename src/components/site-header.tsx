@@ -63,7 +63,7 @@ export function SiteHeader() {
             className="shrink-0 rounded-lg py-1"
             aria-label={`${site.name} — início`}
           >
-            <Wordmark tone="light" className="h-8 sm:h-9" />
+            <Wordmark className="h-11 w-11 sm:h-12 sm:w-12" />
           </a>
 
           <nav aria-label="Navegação principal" className="hidden lg:block">
@@ -136,7 +136,7 @@ export function SiteHeader() {
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="mb-6 flex items-center justify-between">
-                <Wordmark tone="light" className="h-8" />
+                <Wordmark className="h-11 w-11" />
                 <button
                   type="button"
                   onClick={() => setOpen(false)}

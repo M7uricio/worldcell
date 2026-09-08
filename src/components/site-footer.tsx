@@ -18,7 +18,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,1fr)]">
           <div>
-            <Wordmark tone="light" className="h-11" />
+            <Wordmark className="h-16 w-16" />
             <p className="mt-6 max-w-sm leading-relaxed text-white/55">
               iPhones novos e seminovos com garantia, revisão completa e
               avaliação do seu aparelho na troca. Loja física em Diadema, no

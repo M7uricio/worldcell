@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: `${site.name} — iPhones seminovos com garantia em Diadema`,
     description:
       "Teste o aparelho antes de comprar, dê o seu usado na troca e leve com garantia. Nota 5,0 no Google com 1.440 avaliações.",
-    images: [{ url: "/logo.png", width: 1352, height: 1145, alt: site.name }],
+    images: [{ url: "/logo.png", width: 1254, height: 1254, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
@@ -54,7 +54,9 @@ export const metadata: Metadata = {
     images: ["/logo.png"],
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/logo.png", apple: "/logo.png" },
+  // Favicon/apple-touch-icon come from the app/icon.png, app/apple-icon.png,
+  // and app/favicon.ico file conventions instead of being declared here —
+  // Next generates correctly-sized <link> tags from them automatically.
 };
 
 export const viewport: Viewport = {
